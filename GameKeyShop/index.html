@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>🎮 Game Key Shop</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <span class="logo">🎮</span>
+      <div>
+        <div class="header-title">Game Key Shop</div>
+        <div class="header-sub">Mua key game giá tốt</div>
+      </div>
+    </div>
+    <div class="cart-btn" id="cartBtn">
+      🛒 <span class="cart-count" id="cartCount">0</span>
+    </div>
+  </header>
+
+  <!-- SEARCH BAR -->
+  <div class="search-wrap">
+    <input class="search-input" id="searchInput" type="text" placeholder="🔍 Tìm game..." />
+  </div>
+
+  <!-- CATEGORY TABS -->
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-cat="all">Tất cả</button>
+    <button class="tab" data-cat="action">Action</button>
+    <button class="tab" data-cat="rpg">RPG</button>
+    <button class="tab" data-cat="strategy">Strategy</button>
+    <button class="tab" data-cat="sport">Sport</button>
+    <button class="tab" data-cat="dlc">DLC</button>
+  </div>
+
+  <!-- GAME GRID -->
+  <main class="game-grid" id="gameGrid"></main>
+
+  <!-- MODAL: Game Detail -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <img class="modal-img" id="modalImg" src="" alt="" />
+      <div class="modal-badge" id="modalBadge"></div>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <div class="modal-meta" id="modalMeta"></div>
+      <p class="modal-desc" id="modalDesc"></p>
+
+      <div class="key-section">
+        <div class="key-label">Chọn loại key:</div>
+        <div class="key-options" id="keyOptions"></div>
+      </div>
+
+      <div class="modal-price-row">
+        <span class="modal-price" id="modalPrice">0₫</span>
+        <button class="btn-buy" id="btnBuy">🛒 Thêm vào giỏ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Cart -->
+  <div class="modal-overlay" id="cartOverlay">
+    <div class="modal" id="cartModal">
+      <button class="modal-close" id="cartClose">✕</button>
+      <h2 class="modal-title">🛒 Giỏ hàng</h2>
+      <div class="cart-list" id="cartList"></div>
+      <div class="cart-total-row">
+        <span>Tổng cộng:</span>
+        <span class="cart-total" id="cartTotal">0₫</span>
+      </div>
+      <button class="btn-checkout" id="btnCheckout">✅ Thanh toán qua Telegram</button>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
